@@ -8,7 +8,7 @@ pipeline {
         ansiColor('xterm')
     }
     parameters{
-        booleanParam(name: 'appVersion', defaultValue: '1.0.0', description: 'what is the application')
+        string(name: 'appVersion', defaultValue: '1.0.0', description: 'what is the application?')
     }
     environment{
         def appVersion = '' //variable declaration
@@ -19,7 +19,7 @@ pipeline {
         stage('print the version'){
             steps{
                 script{
-                     echo "Application Version: = ${param.appVersion}" 
+                     echo "Application Version: = ${params.appVersion}" 
                    
 
               }
